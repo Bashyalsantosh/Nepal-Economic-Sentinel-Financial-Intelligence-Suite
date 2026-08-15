@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: silver
+    schema: silver
+    tables:
+      - name: nepse_floorsheet_trades
+
+models:
+  - name: stg_nepse_floorsheet
+    description: "Staged NEPSE transaction ticks."
+    columns:
+      - name: contract_id
+        tests:
+          - not_null
+      - name: symbol
+        tests:
+          - not_null
+
+  - name: fact_daily_broker_summary
+    description: "Daily aggregated trading matrix by broker pair."
+    columns:
+      - name: total_volume
+        tests:
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+
+  - name: view_aml_wash_trade_detection
+    description: "Rule-based view detecting reciprocal wash trading in NEPSE."
