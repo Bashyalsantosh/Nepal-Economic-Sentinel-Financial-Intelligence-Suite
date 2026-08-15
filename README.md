@@ -33,11 +33,11 @@ Macro-Economic Dashboards: Real-time visualization of remittance and inflation t
 Production-Ready Models: Integrated ML models (like the Big Mart Sales Predictor) deployed via cloud-native tools.
 
                                         Repository Structure
-Plaintext
-├── airflow/                # DAGs for automated task scheduling
-├── scrapers/               # Python scripts for NRB/NEPSE web scraping
-├── notebooks/              # Exploratory Data Analysis (EDA) and Model Training
-├── models/                 # Serialized ML models (.pkl files)
-├── dashboard/              # Streamlit/Gradio application source code
-├── requirements.txt        # Project dependencies and libraries
+
+nepal-economic-sentinel/
+├── airflow/             # DAGs and task scheduling
+├── dbt/                 # SQL transformations and models
+├── ingestion/           # Python scraping & streaming scripts
+├── spark/               # PySpark batch jobs
+├── docker-compose.yml   # Infrastructure orchestration
 └── README.md
