@@ -1,0 +1,9 @@
+import requests
+import json
+from datetime import datetime
+
+def fetch_nrb_forex():
+    url = "https://www.nrb.org.np/api/forex/v1/rates"
+    params = {"page": 1, "per_page": 1, "from": datetime.today().strftime('%Y-%m-%d')}
+    res = requests.get(url, params=params)
+    return res.json()
